@@ -11,8 +11,11 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/2581708d69.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -49,8 +52,14 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cart.index') }}">Cart({{ \Cart::session(auth()->id())->getTotalQuantity() }})</a>
+                            <li class="nav-item mr-2">
+                                <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
+                                    <i class="fas fa-shopping-cart text-success fa-2x"></i>
+                                    <div class="badge badge-danger">
+                                        {{ \Cart::session(auth()->id())->getTotalQuantity() }}
+                                    </div>
+                                </a>
+
                             </li>
 
                             <li class="nav-item dropdown">

@@ -38,5 +38,5 @@
         Total price : ${{ \Cart::session(auth()->id())->getTotal() }}
     </h3>
 
-    <a class="btn btn-primary" href="#" role="button">Proceed to checkout</a>
+    <a class="btn btn-primary" href="{{ route('cart.checkout') }}" role="button">Proceed to checkout</a>
 @endsection

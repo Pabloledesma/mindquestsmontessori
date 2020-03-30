@@ -40,6 +40,11 @@ class CartController extends Controller
         return back();
     }
 
+    public function checkout()
+    {
+        return view('cart.checkout');
+    }
+
     public function destroy($itemId)
     {
         \Cart::session(auth()->id())->remove($itemId);
